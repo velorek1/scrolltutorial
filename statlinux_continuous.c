@@ -85,7 +85,7 @@ char readchar() {
 void scrollDemo2(unsigned int X, unsigned int Y, char states[NUM_STATES][MAX_LENGTH], unsigned int displayLimit, unsigned int *startFrom, unsigned int *currentIndex, unsigned int padding){
 	unsigned int dummyI = 0;
 	size_t i=0;
-	for (i = *startFrom; i < *startFrom+displayLimit && i<NUM_STATES; i++) {
+	for (i = *startFrom; i < *startFrom+displayLimit; i++) {
 	    outputcolor(T_WHITE,B_BLUE);
 	    gotoxy(X,Y+dummyI);
 	    dummyI++;
@@ -96,10 +96,11 @@ void scrollDemo2(unsigned int X, unsigned int Y, char states[NUM_STATES][MAX_LEN
 
 }
 
+
 int main() {
    char ch=0;
    unsigned int currentIndex=0;
-   unsigned int lastDisplayIndex = MAX_LENGTH - displayLimit;
+   unsigned int lastDisplayIndex = NUM_STATES - displayLimit;
    unsigned int startFrom = 0;
   char states[NUM_STATES][MAX_LENGTH] = {
         "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", "Connecticut",
